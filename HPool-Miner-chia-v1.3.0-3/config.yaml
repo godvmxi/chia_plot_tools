@@ -1,0 +1,24 @@
+token: ""
+path:
+- /srv/chia/disk/00/chia
+- /srv/chia/disk/01/chia
+- /srv/chia/disk/02/chia
+- /srv/chia/disk/03/chia
+- /srv/chia/disk/04/chia
+minerName: hpool-chia-0
+apiKey: 5bf05c65-4d9e-486c-b3db-309feb6ff32a
+cachePath: ""
+deviceId: ""
+extraParams: {}
+log:
+  lv: info
+  path: ../log/
+  name: miner.log
+url:
+  info: ""
+  submit: ""
+  line: ""
+scanPath: true
+scanMinute: 10
+debug: ""
+language: cn
