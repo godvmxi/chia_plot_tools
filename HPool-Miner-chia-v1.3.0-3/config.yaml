@@ -6,6 +6,7 @@ path:
 - /srv/chia/disk/03/chia
 - /srv/chia/disk/04/chia
 - /srv/chia/disk/05/chia
+- /srv/chia/disk/06/chia
 minerName: hpool-chia-0
 apiKey: 5bf05c65-4d9e-486c-b3db-309feb6ff32a
 cachePath: ""
