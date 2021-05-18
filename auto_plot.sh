@@ -1,2 +1,2 @@
 #/bin/bash
-/srv/chia/tools/mult_plot.sh 1 &
+/srv/chia/tools/chia-plotter/cfg_plot.sh &
