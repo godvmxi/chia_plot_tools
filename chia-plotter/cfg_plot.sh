@@ -22,9 +22,11 @@ function init_tmux_session()
    tmux new-session -A -d -s ${SESSION}
    
    tmux send-keys -t ${SESSION} 'htop'   C-m
+   tmux splitw  -h -p 50 -t ${SESSION}
+   tmux send-keys -t ${SESSION} 'watch "iostat -h"'   C-m
    tmux rename-window -t 0 "TASK:"${TASK_NUM}
 
-#   terminator -m -e "tmux a -t ${SESSION}"
+   terminator -m -e "tmux a -t ${SESSION}"
 }
 
 function run_tmux_plot_cmd()
@@ -46,7 +48,7 @@ function run_tmux_plot_cmd()
 
     tmux send-keys -t ${SESSION} "echo INDEX:${INDEX} ${TASK_INFO} DELAY: ${DELAY_MS} TMP:${T_DIR} DST:${D_DIR} MEM:${MEM_SIZE} THREAD_NUM:${THREAD_NUM}"  C-m
     tmux send-keys -t ${SESSION} "cd /srv/chia/tools/chia-plotter/" C-m
-    tmux send-keys -t ${SESSION} "sleep ${DELAY_MS};time ./chia-plotter-linux-amd64 -action plotting -plotting-fpk 0x8addc65c5cc57e2ea08c460d15a2287143fff3c357b9f554b0a831a7722acea624532aab7fb488c3f0d7a35a71809496 -plotting-ppk 0xa605b02dc7ebd75712a50d650a5aa708cd5e98a05ae0f5a1c9364cd2569a717b3f4c5457d929259649af7335b66c00c9 -plotting-n 10 -b ${MEM_SIZE} -r ${THREAD_NUM} -p  -d ${D_DIR} -t ${T_DIR} " C-m
+    tmux send-keys -t ${SESSION} "sleep ${DELAY_MS};time ./chia-plotter-linux-amd64 -action plotting -plotting-fpk 0x8addc65c5cc57e2ea08c460d15a2287143fff3c357b9f554b0a831a7722acea624532aab7fb488c3f0d7a35a71809496 -plotting-ppk 0xa605b02dc7ebd75712a50d650a5aa708cd5e98a05ae0f5a1c9364cd2569a717b3f4c5457d929259649af7335b66c00c9 -plotting-n 1000 -b ${MEM_SIZE} -r ${THREAD_NUM} -p  -d ${D_DIR} -t ${T_DIR} " C-m
     #time ./chia-plotter-linux-amd64 -action plotting -plotting-fpk 0x8addc65c5cc57e2ea08c460d15a2287143fff3c357b9f
     cd -
     return 0
@@ -102,10 +104,15 @@ do
 
    run_tmux_plot_cmd ${INDEX} ${DELAY}  ${T_DIR} ${D_DIR} ${MEM_SIZE} ${THREAD_NUM}
    let INDEX++
-
-
 done < ${CFG_FILE}
 
+for i in `seq 1 ${index}`
+do
+    tmux select-window -t ${SESSION}:i
+    sleep 3
+done
+
+tmux select-window -t ${SESSION}:0
 
 
 
