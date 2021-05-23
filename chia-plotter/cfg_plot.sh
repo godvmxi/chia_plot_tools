@@ -108,7 +108,7 @@ done < ${CFG_FILE}
 
 for i in `seq 1 ${index}`
 do
-    tmux select-window -t ${SESSION}:i
+    tmux select-window -t ${SESSION}:$i
     sleep 3
 done
 
