@@ -2,6 +2,7 @@
 CFG_FILE=/etc/chia/chia.conf
 
 SESSION=CHIA
+#REPLACE the key to yours
 PUBLIC_KEY=8addc65c5cc57e2ea08c460d15a2287143fff3c357b9f554b0a831a7722acea624532aab7fb488c3f0d7a35a71809496
 POOL_KEY=a605b02dc7ebd75712a50d650a5aa708cd5e98a05ae0f5a1c9364cd2569a717b3f4c5457d929259649af7335b66c00c9
 
@@ -29,7 +30,7 @@ function init_tmux_session()
    tmux send-keys -t ${SESSION} 'watch "iostat -h"'   C-m
    tmux rename-window -t 0 "CHIA:0"
 
-   terminator -m -e "tmux a -t ${SESSION}"
+   #terminator -m -e "tmux a -t ${SESSION}"
 }
 
 function run_tmux_plot_cmd()
