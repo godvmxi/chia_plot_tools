@@ -49,9 +49,10 @@ function run_tmux_plot_cmd()
 
     mkdir -p ${T_DIR}
     mkdir -p ${T2_DIR}
-    mkdir -p ${D_DIR}
+    mkdir -p ${D_DIR}    
+    rm -rf ${T_DIR}/*
+    rm -rf ${T2_DIR}/*
     let DELAY_MS=${DELAY}*60
-    #rm -rf ${T_DIR}/*
     #echo "delay to start->min: $DELAY ms: $DELAY_MS"
     tmux new-window -t ${SESSION}:${ID} -n ${SESSION}:${ID}
     
