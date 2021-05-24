@@ -1,15 +1,16 @@
 ## CHIA PLOT TOOLS
 ### NOTE:
 1. Change your plot public key and farm pool key first in the chia_plot.sh first
-2. change your api key in HPool-Miner-chia/config.yaml, Do no attack me, just for fun
+2. Change your api key in HPool-Miner-chia/config.yaml, Do no attack me, just for fun
 ### Feature
-> support hpool tools
-> support chia cli tools
-> support each task temp and dst define
-> support chia cli temp2 define
-> add task start delay setting for muli-plot in small ssd, such as plot 2 in on 512GB SSD
-> use tmux to run the task
-> use sysstat, htop to monitor the system usage
+> Support hpool tools
+> Support chia cli tools
+> Mine in hpool, default use the latest version, change a link when your want to use an older version
+> Support each task temp and dst define
+> Support chia cli temp2 define
+> Add task start delay setting for muli-plot in small ssd, such as plot 2 in on 512GB SSD
+> Use tmux to run the task
+> Use sysstat, htop to monitor the system usage
 
 
 ### Config your file
@@ -25,3 +26,9 @@ choose one:
 
 ### Request
 If you need windows or GUI support, fire a issue, if there are many request, I will consider to develop it.
+
+### Auto Start plot when system boot
+
+### Auto Start miner and monitor
+Use supervisor will be a good choice, you can find my conf in the repo
+
