@@ -4,6 +4,7 @@ path:
 - /srv/chia/disk/02/chia
 - /srv/chia/disk/03/chia
 - /srv/chia/disk/04/chia
+- /srv/chia/disk/05/chia
 - /srv/chia/disk/06/chia
 - /srv/chia/disk/07/chia
 - /srv/chia/disk/08/chia
