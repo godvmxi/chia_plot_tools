@@ -57,7 +57,7 @@ function run_tmux_plot_cmd()
     tmux new-window -t ${SESSION}:${ID} -n ${SESSION}:${ID}
     
 
-    tmux send-keys -t ${SESSION} "sleep ${DELAY_MS};time chia plots create -k 32 -f ${PUBLIC_KEY} -p ${POOL_KEY}  -b ${MEM_SIZE} -r ${THREAD_NUM} -n 1 -t ${T_DIR} -2 ${T2_DIR} -d ${D_DIR}" C-m
+    tmux send-keys -t ${SESSION} "sleep ${DELAY_MS};time chia plots create -k 32 -f ${PUBLIC_KEY} -p ${POOL_KEY}  -b ${MEM_SIZE} -r ${THREAD_NUM} -n 10000 -t ${T_DIR} -2 ${T2_DIR} -d ${D_DIR}" C-m
     tmux rename-window -t ${SESSION}  "${ID}-${NAME}"
     #time ./chia-plotter-linux-amd64 -action plotting -plotting-fpk 0x8addc65c5cc57e2ea08c460d15a2287143fff3c357b9f
 
