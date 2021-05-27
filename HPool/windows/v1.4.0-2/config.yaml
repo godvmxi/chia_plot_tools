@@ -1,0 +1,16 @@
+path:
+minerName:
+apiKey:
+cachePath: ""
+deviceId: ""
+extraParams: {}
+log:
+  lv: info
+  path: ./log/
+  name: miner.log
+url:
+  info: ""
+  submit: ""
+scanPath: false
+scanMinute: 60
+
