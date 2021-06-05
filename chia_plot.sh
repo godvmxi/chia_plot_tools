@@ -30,7 +30,7 @@ function init_tmux_session()
    tmux send-keys -t ${SESSION} 'watch "iostat -h"'   C-m
    tmux rename-window -t 0 "CHIA:0"
 
-   #terminator -m -e "tmux a -t ${SESSION}"
+   terminator -m -e "tmux a -t ${SESSION}"
 }
 
 function run_tmux_plot_cmd()
