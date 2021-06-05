@@ -1,0 +1,16 @@
+#!/bin/bash
+search_path="/srv/chia/disk  /media /mnt"
+link_path="/srv/chia/link"
+echo "search path -> " ${search_path}
+echo "link path -> " ${link_path}
+rm -rf ${link_path}
+mkdir -p ${link_path}
+sleep 2
+echo "search result list->"
+find ${search_path}  -name "*.plot"
+echo -e "\n\nDone\n\n"
+find ${search_path}  -name "*.plot" |  xargs  -i ln -sfv   {}  ${link_path}
+ls -alh ${link_path}
+cd ${link_path}
+ls plot* |sort |uniq -d
+cd -
