@@ -27,10 +27,10 @@ function init_tmux_session()
    tmux splitw  -v -p 90 -t ${SESSION}
    tmux send-keys -t ${SESSION} 'htop'   C-m
    tmux splitw  -h -p 50 -t ${SESSION}
-   tmux send-keys -t ${SESSION} 'watch "iostat -h"'   C-m
+   tmux send-keys -t ${SESSION} 'watch "sensors;iostat -h"'   C-m
    tmux rename-window -t 0 "CHIA:0"
 
-   terminator -m -e "tmux a -t ${SESSION}"
+#   terminator -m -e "tmux a -t ${SESSION}"
 }
 
 function run_tmux_plot_cmd()
