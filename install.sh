@@ -1,5 +1,5 @@
 #!/bin/bash
-apt install tmux sysstat htop terminator supervisor lm-sensors
+apt install tmux sysstat htop terminator supervisor lm-sensors tree
 mkdir /etc/chia/ -p
 cp cfg/*  /etc/chia/
 cp supervisor/* /etc/supervisor/conf.d/

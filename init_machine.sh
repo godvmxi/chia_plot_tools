@@ -1,5 +1,6 @@
 #!/bin/bash
 base=/srv/chia
+current_dir=`pwd`
 function create_seq_dir()
 {
    for i in $(seq 1 $1);
@@ -36,3 +37,4 @@ mkdir -pv /etc/chia/
 chmod 777 /etc/chia/
 #make
 
+ln -sfv ${current_dir}  /srv/chia/tools
