@@ -1,0 +1,12 @@
+#!/bin/bash
+search_path="/srv/chia/disk/"
+echo "search path -> " ${search_path}
+echo "copy target -> " ${1}
+sleep 2
+echo "search result list->"
+find ${search_path}  -name "*.plot"
+echo -e "\n\nDone\n\n"
+find ${search_path}  -name "*.plot" |  wc -l
+
+sleep 4
+find ${search_path}  -name "*.plot" | xargs -i rsync  -P --size-only --remove-source-files  {}  $1
