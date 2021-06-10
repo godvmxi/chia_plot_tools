@@ -38,9 +38,9 @@ function run_tmux_plot_cmd()
     ID=$1
     NAME=${2^^}
     DELAY=$3
-    T_DIR=$4
-    T2_DIR=$5
-    D_DIR=$6
+    T_DIR=$4/tmp
+    T2_DIR=$5/tmp
+    D_DIR=$6/chia
     MEM_SIZE=$7
     THREAD_NUM=$8
 
