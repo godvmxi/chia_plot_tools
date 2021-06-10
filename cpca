@@ -9,4 +9,5 @@ echo -e "\n\nDone\n\n"
 find ${search_path}  -name "*.plot" |  wc -l
 
 sleep 4
+echo "will start copy"
 find ${search_path}  -name "*.plot" | xargs -i rsync  -P --size-only --remove-source-files  {}  $1
