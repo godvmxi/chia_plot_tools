@@ -1,0 +1,47 @@
+#!/bin/bash
+search_path="/srv/chia/disk/"
+function delete_locked_file()
+{
+    echo "delete -> ${1}"
+    supervisorctl  stop all
+    rm  $1
+    if [ -e ${file} ]; then
+	echo "delete file fail : "$1
+    fi
+    supervisorctl  start all
+}
+target_dir=${1}
+echo "search path -> " ${search_path}
+echo "copy target -> " ${target_dir}
+sleep 2
+echo "search result list->"
+file_list=`find ${search_path}  -name "*.plot"`
+#for file in  `split $file_list`;
+for file in  ${file_list[@]}
+do
+    #rsync  -P --size-only --remove-source-files  ${file}  ${target_dir}
+    detail=`ls -lah ${file}`
+    if [ $? != 0 ] ;then
+       echo "target file is not exist -> ${file}"
+       continue
+    fi
+    file_size=`echo $detail |awk '{print $5}'`
+    #echo "file size -> "${file_size}
+    if [ "$file_size" != "102G" ]; then
+	echo "file size error:  ${file}"
+        supervisorctl  stop all
+	echo ${file} >> error_file.txt
+        delete_locked_file $file
+        continue
+    fi
+    supervisorctl  start all
+    rsync  -P --size-only --remove-source-files  ${file}  ${target_dir}
+    if [ $? != 0 ] ;then
+       echo "rsync copy error,target maybe full -> ${file}"
+       break
+    fi
+    delete_locked_file $file
+done
+
+echo -e "\n\nDone\n\n"
+supervisorctl  start all
