@@ -1,0 +1,25 @@
+token: ""
+path:
+- /srv/chia/disk/02/new
+- ""
+minerName: chia-x99-f8-ploter-0
+apiKey: mass0000-1eba-4a12-9c76-5d59bc19a0a4
+cachePath: ""
+deviceId: ""
+extraParams: {}
+log:
+  lv: info
+  path: ./log
+  name: miner.log
+url:
+  info: ""
+  submit: ""
+  line: ""
+  ws: ""
+  proxy: ""
+scanPath: false
+scanMinute: 0
+debug: ""
+language: cn
+line: cn
+multithreadingLoad: false

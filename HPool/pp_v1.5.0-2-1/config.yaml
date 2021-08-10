@@ -1,0 +1,36 @@
+token: ""
+path:
+- /srv/chia/disk/01/chia_new
+- /srv/chia/disk/02/chia_new
+- /srv/chia/disk/03/chia_new
+- /srv/chia/disk/04/chia_new
+- /srv/chia/disk/05/chia_new
+- /srv/chia/disk/06/chia_new
+- /srv/chia/disk/07/chia_new
+- /srv/chia/disk/08/chia_new
+- /srv/chia/disk/09/chia_new
+- /srv/chia/disk/10/chia_new
+- /srv/chia/disk/11/chia_new
+- /srv/chia/disk/12/chia_new
+- /srv/chia/disk/13/chia_new
+minerName: chia-x99-f8-ploter-0
+apiKey: chiapp00-7f04-467e-a437-636bbf5e41b8
+cachePath: ""
+deviceId: ""
+extraParams: {}
+log:
+  lv: info
+  path: /var/log/chia/
+  name: pp.log
+url:
+  info: ""
+  submit: ""
+  line: ""
+  ws: ""
+  proxy: ""
+scanPath: false
+scanMinute: 0
+debug: ""
+language: cn
+line: cn
+multithreadingLoad: false
